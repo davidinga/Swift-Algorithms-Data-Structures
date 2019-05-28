@@ -6,7 +6,9 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
-private struct Stack<Element> {
+// Stack implementation using Array<Element>
+
+struct Stack<Element> {
     fileprivate var array = [Element]()
     
     public var isEmpty: Bool {

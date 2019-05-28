@@ -1,29 +1,29 @@
 //
-//  LinkedList.swift
+//  SinglyLinkedList.swift
 //  Swift Algorithms & Data Structures
 //
 //  Created by David Inga on 5/24/19.
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
-class LinkedList<Element> {
-    var head: Node<Element>?
-    var tail: Node<Element>?
+class SinglyLinkedList<Element> {
+    var head: SinglyLinkedListNode<Element>?
+    var tail: SinglyLinkedListNode<Element>?
     
     var isEmpty: Bool {
         return head == nil
     }
     
-    var first: Node<Element>? {
+    var first: SinglyLinkedListNode<Element>? {
         return head
     }
     
-    var last: Node<Element>? {
+    var last: SinglyLinkedListNode<Element>? {
         return tail
     }
     
     func append(_ element: Element) {
-        let newNode = Node.init(element)
+        let newNode = SinglyLinkedListNode(element)
         if tail != nil {
             tail!.next = newNode
         } else {
@@ -32,7 +32,7 @@ class LinkedList<Element> {
         tail = newNode
     }
     
-    func index(of element: Int) -> Node<Element>? {
+    func index(of element: Int) -> SinglyLinkedListNode<Element>? {
         if element < 0, head == nil {
             return nil
         }
@@ -49,6 +49,7 @@ class LinkedList<Element> {
     }
     
     func remove(at index: Int) -> Element? {
+        //TODO: Remove prevNode and nextNode
         var node = head
         var prevNode = node
         var nextNode = node
@@ -76,6 +77,23 @@ class LinkedList<Element> {
             node = node!.next
         }
         return element
+    }
+    
+}
+
+extension SinglyLinkedList: CustomStringConvertible {
+    
+    public var description: String {
+        
+        var text = "["
+        var node = head
+        
+        while node != nil {
+            text += "\(node!.element)"
+            node = node!.next
+            if node != nil { text += ", " }
+        }
+        return text + "]"
     }
     
 }
