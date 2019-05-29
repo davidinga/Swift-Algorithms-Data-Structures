@@ -9,15 +9,19 @@
 class DoublyLinkedList<Element> {
     var head: DoublyLinkedListNode<Element>?
     var tail: DoublyLinkedListNode<Element>?
+    
     var first: DoublyLinkedListNode<Element>? {
         return head
     }
+    
     var last: DoublyLinkedListNode<Element>? {
         return tail
     }
+    
     var isEmpty: Bool {
         return head == nil
     }
+    
     var count: Int {
         var node = head
         var count = 0
@@ -27,6 +31,7 @@ class DoublyLinkedList<Element> {
         }
         return count
     }
+    
     func append(_ element: Element) {
         let node = DoublyLinkedListNode(element)
         if isEmpty {
@@ -37,6 +42,7 @@ class DoublyLinkedList<Element> {
         }
         tail = node
     }
+    
     func index(of element: Int) -> DoublyLinkedListNode<Element>? {
         if element < 0, head == nil {
             return nil
@@ -47,10 +53,12 @@ class DoublyLinkedList<Element> {
         }
         return node
     }
+    
     func removeAll() {
         head = nil
         tail = nil
     }
+    
     func remove(at index: Int) -> DoublyLinkedListNode<Element>? {
         var node = head
         for i in 0...index {
@@ -72,6 +80,33 @@ class DoublyLinkedList<Element> {
         }
         return node
     }
+    
+    func remove(node: DoublyLinkedListNode<Element>) -> DoublyLinkedListNode<Element>? {
+        let prev = node.prev
+        let next = node.next
+        
+        // Removing element inbetween head and tail
+        if let prev = prev {
+            prev.next = next
+        } else {
+            
+        // Removing head
+            head = next
+        }
+        
+        next?.prev = prev
+
+        // Removing tail
+        if next == nil {
+            tail = prev
+        }
+        
+        node.prev = nil
+        node.next = nil
+        
+        return node
+    }
+    
 }
 
 extension DoublyLinkedList: CustomStringConvertible {

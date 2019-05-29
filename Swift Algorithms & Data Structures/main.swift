@@ -9,6 +9,9 @@
 // Test Stack
 _ = StackTests()
 
+// Test Stack with Linked List
+_ = StackWithLinkedListTests()
+
 // Test Singly Linked List
 _ = SinglyLinkedListTests()
 
