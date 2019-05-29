@@ -89,6 +89,35 @@ class SinglyLinkedList<Element> {
         return element
     }
     
+    func remove(node: SinglyLinkedListNode<Element>) -> SinglyLinkedListNode<Element>? {
+        // Find previous node
+        var prev = head
+        
+        while prev! != node {
+            prev = prev!.next
+        }
+        
+        let next = node.next
+        
+        // Removing element inbetween head and tail
+        if let prev = prev {
+            prev.next = next
+        } else {
+            
+            // Removing head
+            head = next
+        }
+        
+        // Removing tail
+        if next == nil {
+            tail = prev
+        }
+
+        node.next = nil
+        
+        return node
+    }
+    
 }
 
 extension SinglyLinkedList: CustomStringConvertible {

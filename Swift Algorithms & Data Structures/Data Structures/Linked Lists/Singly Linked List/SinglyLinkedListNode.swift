@@ -14,3 +14,10 @@ class SinglyLinkedListNode<Element> {
         self.element = element
     }
 }
+
+extension SinglyLinkedListNode: Equatable {
+    static func == (lhs: SinglyLinkedListNode, rhs: SinglyLinkedListNode) -> Bool {
+        return
+            lhs.next == rhs.next
+    }
+}

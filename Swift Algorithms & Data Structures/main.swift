@@ -6,6 +6,9 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
+// Test Queue
+_ = QueueTests()
+
 // Test Stack
 _ = StackTests()
 
