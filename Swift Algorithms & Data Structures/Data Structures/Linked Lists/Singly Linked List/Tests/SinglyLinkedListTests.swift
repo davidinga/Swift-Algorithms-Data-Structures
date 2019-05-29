@@ -34,6 +34,7 @@ class SinglyLinkedListTests {
         dock.append("System Preferences")
         
         print("The LinkedList contains: \(dock.description)")
+        print("The number of elements in LinkedList is: \(dock.count)")
         dock.isEmpty ? print("The LinkedList is empty.") : print("The LinkedList contains elements.")
         print("The first element is: \(dock.first!.element).")
         print("The last element is: \(dock.last!.element).")

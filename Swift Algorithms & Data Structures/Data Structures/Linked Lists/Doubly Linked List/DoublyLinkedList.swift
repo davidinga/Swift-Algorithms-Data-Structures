@@ -18,6 +18,15 @@ class DoublyLinkedList<Element> {
     var isEmpty: Bool {
         return head == nil
     }
+    var count: Int {
+        var node = head
+        var count = 0
+        while node != nil {
+            count += 1
+            node = node!.next
+        }
+        return count
+    }
     func append(_ element: Element) {
         let node = DoublyLinkedListNode(element)
         if isEmpty {

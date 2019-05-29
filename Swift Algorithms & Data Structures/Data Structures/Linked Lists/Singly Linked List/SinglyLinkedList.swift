@@ -14,6 +14,16 @@ class SinglyLinkedList<Element> {
         return head == nil
     }
     
+    var count: Int {
+        var node = head
+        var count = 0
+        while node != nil {
+            count += 1
+            node = node!.next
+        }
+        return count
+    }
+    
     var first: SinglyLinkedListNode<Element>? {
         return head
     }
