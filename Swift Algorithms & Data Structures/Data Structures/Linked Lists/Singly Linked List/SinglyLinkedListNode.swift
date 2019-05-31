@@ -6,9 +6,9 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
-class SinglyLinkedListNode<Element> {
-    var element: Element
-    var next: SinglyLinkedListNode<Element>?
+public class SinglyLinkedListNode<Element> {
+    public var element: Element
+    public var next: SinglyLinkedListNode<Element>?
     
     init(_ element: Element) {
         self.element = element
@@ -16,7 +16,7 @@ class SinglyLinkedListNode<Element> {
 }
 
 extension SinglyLinkedListNode: Equatable {
-    static func == (lhs: SinglyLinkedListNode, rhs: SinglyLinkedListNode) -> Bool {
+    public static func == (lhs: SinglyLinkedListNode, rhs: SinglyLinkedListNode) -> Bool {
         return
             lhs.next == rhs.next
     }

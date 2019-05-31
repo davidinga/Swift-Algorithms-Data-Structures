@@ -20,6 +20,9 @@
 		63D7F4FA229E1FF800BFF5F9 /* StackWithLinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F4F9229E1FF800BFF5F9 /* StackWithLinkedListTests.swift */; };
 		63D7F4FC229F347F00BFF5F9 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F4FB229F347F00BFF5F9 /* Queue.swift */; };
 		63D7F500229F3F0200BFF5F9 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F4FF229F3F0200BFF5F9 /* QueueTests.swift */; };
+		63D7F504229F606200BFF5F9 /* HashSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F503229F606200BFF5F9 /* HashSet.swift */; };
+		63D7F50922A06EFC00BFF5F9 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F50822A06EFC00BFF5F9 /* HashTable.swift */; };
+		63D7F50C22A1E6C800BFF5F9 /* HashTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F50B22A1E6C800BFF5F9 /* HashTableTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +52,9 @@
 		63D7F4F9229E1FF800BFF5F9 /* StackWithLinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackWithLinkedListTests.swift; sourceTree = "<group>"; };
 		63D7F4FB229F347F00BFF5F9 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		63D7F4FF229F3F0200BFF5F9 /* QueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
+		63D7F503229F606200BFF5F9 /* HashSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashSet.swift; sourceTree = "<group>"; };
+		63D7F50822A06EFC00BFF5F9 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
+		63D7F50B22A1E6C800BFF5F9 /* HashTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,8 @@
 		63D7F4D722988F5300BFF5F9 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				63D7F50622A06EBB00BFF5F9 /* Hash Tables */,
+				63D7F501229F603A00BFF5F9 /* Sets */,
 				63D7F4FD229F348800BFF5F9 /* Queues */,
 				63D7F4D82298958800BFF5F9 /* Stacks */,
 				63D7F4D422988ED600BFF5F9 /* Linked Lists */,
@@ -210,6 +218,55 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		63D7F501229F603A00BFF5F9 /* Sets */ = {
+			isa = PBXGroup;
+			children = (
+				63D7F502229F605200BFF5F9 /* Hash Set */,
+			);
+			path = Sets;
+			sourceTree = "<group>";
+		};
+		63D7F502229F605200BFF5F9 /* Hash Set */ = {
+			isa = PBXGroup;
+			children = (
+				63D7F503229F606200BFF5F9 /* HashSet.swift */,
+				63D7F505229F606600BFF5F9 /* Tests */,
+			);
+			path = "Hash Set";
+			sourceTree = "<group>";
+		};
+		63D7F505229F606600BFF5F9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		63D7F50622A06EBB00BFF5F9 /* Hash Tables */ = {
+			isa = PBXGroup;
+			children = (
+				63D7F50722A06ECE00BFF5F9 /* Hash Table with Chaining */,
+			);
+			path = "Hash Tables";
+			sourceTree = "<group>";
+		};
+		63D7F50722A06ECE00BFF5F9 /* Hash Table with Chaining */ = {
+			isa = PBXGroup;
+			children = (
+				63D7F50822A06EFC00BFF5F9 /* HashTable.swift */,
+				63D7F50A22A06F0000BFF5F9 /* Tests */,
+			);
+			path = "Hash Table with Chaining";
+			sourceTree = "<group>";
+		};
+		63D7F50A22A06F0000BFF5F9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				63D7F50B22A1E6C800BFF5F9 /* HashTableTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,11 +331,14 @@
 				63D7F4F1229DF04D00BFF5F9 /* StackTests.swift in Sources */,
 				63D7F4FA229E1FF800BFF5F9 /* StackWithLinkedListTests.swift in Sources */,
 				63D7F4E42299F53900BFF5F9 /* DoublyLinkedList.swift in Sources */,
+				63D7F50922A06EFC00BFF5F9 /* HashTable.swift in Sources */,
 				63D7F4FC229F347F00BFF5F9 /* Queue.swift in Sources */,
 				63D7F4E22299F15C00BFF5F9 /* DoublyLinkedListNode.swift in Sources */,
+				63D7F50C22A1E6C800BFF5F9 /* HashTableTests.swift in Sources */,
 				63D7F4D622988F2A00BFF5F9 /* SinglyLinkedListNode.swift in Sources */,
 				63D7F4D322988ECA00BFF5F9 /* SinglyLinkedList.swift in Sources */,
 				63D7F4CA22988E5600BFF5F9 /* main.swift in Sources */,
+				63D7F504229F606200BFF5F9 /* HashSet.swift in Sources */,
 				63D7F500229F3F0200BFF5F9 /* QueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

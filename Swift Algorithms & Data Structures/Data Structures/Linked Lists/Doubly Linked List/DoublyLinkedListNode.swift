@@ -6,10 +6,10 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
-class DoublyLinkedListNode<Element> {
-    var prev: DoublyLinkedListNode<Element>?
-    var next: DoublyLinkedListNode<Element>?
-    var element: Element
+public class DoublyLinkedListNode<Element> {
+    public var prev: DoublyLinkedListNode<Element>?
+    public var next: DoublyLinkedListNode<Element>?
+    public var element: Element
     
     init(_ element: Element) {
         self.element = element

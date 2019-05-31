@@ -14,11 +14,11 @@ struct StackWithLinkedList<Element> {
     }
     
     mutating func pop() -> DoublyLinkedListNode<Element>? {
-        return stack.remove(node: stack.tail!)
+        return stack.remove(node: stack.last!)
     }
     
     func peek() -> DoublyLinkedListNode<Element>? {
-        return stack.tail
+        return stack.last
     }
     
     var isEmpty: Bool {

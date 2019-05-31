@@ -6,15 +6,15 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
-class SinglyLinkedList<Element> {
-    var head: SinglyLinkedListNode<Element>?
-    var tail: SinglyLinkedListNode<Element>?
+public class SinglyLinkedList<Element> {
+    private var head: SinglyLinkedListNode<Element>?
+    private var tail: SinglyLinkedListNode<Element>?
     
-    var isEmpty: Bool {
+    public var isEmpty: Bool {
         return head == nil
     }
     
-    var count: Int {
+    public var count: Int {
         var node = head
         var count = 0
         while node != nil {
@@ -24,15 +24,15 @@ class SinglyLinkedList<Element> {
         return count
     }
     
-    var first: SinglyLinkedListNode<Element>? {
+    public var first: SinglyLinkedListNode<Element>? {
         return head
     }
     
-    var last: SinglyLinkedListNode<Element>? {
+    public var last: SinglyLinkedListNode<Element>? {
         return tail
     }
     
-    func append(_ element: Element) {
+    public func append(_ element: Element) {
         let newNode = SinglyLinkedListNode(element)
         if tail != nil {
             tail!.next = newNode
@@ -42,7 +42,7 @@ class SinglyLinkedList<Element> {
         tail = newNode
     }
     
-    func index(of element: Int) -> SinglyLinkedListNode<Element>? {
+    public func index(of element: Int) -> SinglyLinkedListNode<Element>? {
         if element < 0, head == nil {
             return nil
         }
@@ -53,12 +53,12 @@ class SinglyLinkedList<Element> {
         return node
     }
     
-    func removeAll() {
+    public func removeAll() {
         head = nil
         tail = nil
     }
     
-    func remove(at index: Int) -> Element? {
+    public func remove(at index: Int) -> Element? {
         //TODO: Remove prevNode and nextNode
         var node = head
         var prevNode = node
@@ -89,7 +89,7 @@ class SinglyLinkedList<Element> {
         return element
     }
     
-    func remove(node: SinglyLinkedListNode<Element>) -> SinglyLinkedListNode<Element>? {
+    public func remove(node: SinglyLinkedListNode<Element>) -> SinglyLinkedListNode<Element>? {
         // Find previous node
         var prev = head
         

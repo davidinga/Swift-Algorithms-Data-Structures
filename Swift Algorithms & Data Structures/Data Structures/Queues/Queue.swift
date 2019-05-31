@@ -22,11 +22,11 @@ public struct Queue<Element> {
     }
     
     mutating func dequeue() -> SinglyLinkedListNode<Element>? {
-        return queue.remove(node: queue.head!)
+        return queue.remove(node: queue.first!)
     }
     
     func peek() -> SinglyLinkedListNode<Element>? {
-        return queue.head!
+        return queue.first!
     }
 
 }
