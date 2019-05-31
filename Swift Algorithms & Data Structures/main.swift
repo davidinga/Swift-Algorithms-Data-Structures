@@ -6,6 +6,9 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
+// Test Hash Table
+_ = HashTableTests()
+
 // Test Queue
 _ = QueueTests()
 
