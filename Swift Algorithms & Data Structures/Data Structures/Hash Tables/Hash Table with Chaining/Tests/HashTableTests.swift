@@ -33,6 +33,14 @@ class HashTableTests {
         print("tt0111161: \"The Shawshank Redemption\" is missing year. Updating with year. ")
         movies.updateValue("The Shawshank Redemption (1994)", forKey: "tt0111161")
         print("tt0111161: \"\(movies.value(forKey: "tt0111161")!)\"")
+        print("Let's remove \"\(movies.value(forKey: "tt0050083")!)\" because it is old.")
+        
+        print()
+        print("Hash Table:")
+        print()
+        print(movies.debugDescription)
+        print()
+        
         print("Let's empty the Hash Table.")
         movies.removeAll()
         

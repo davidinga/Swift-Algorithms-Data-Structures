@@ -21,6 +21,8 @@ struct HashTable<Key: Hashable, Value> {
     init(size: Int) {
         assert(size > 0)
         table = Array<List>()
+        
+        //TODO: Init size of array with next closest prime number.
         for _ in 0..<size {
             let list = List()
             table += [list]
