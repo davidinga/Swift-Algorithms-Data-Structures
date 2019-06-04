@@ -90,30 +90,33 @@ public class SinglyLinkedList<Element> {
     }
     
     public func remove(node: SinglyLinkedListNode<Element>) -> SinglyLinkedListNode<Element>? {
+
+        // Removing head
+        if node == head {
+            head = node.next
+            return node
+        }
+        
+        var next = node.next
+            
         // Find previous node
         var prev = head
         
-        while prev! != node {
+        while prev!.next != node {
             prev = prev!.next
         }
         
-        let next = node.next
-        
-        // Removing element inbetween head and tail
-        if let prev = prev {
-            prev.next = next
-        } else {
-            
-            // Removing head
-            head = next
-        }
-        
         // Removing tail
-        if next == nil {
+        if node == tail {
             tail = prev
         }
+        
+        // Removing element inbetween head and tail
+        else {
+            prev!.next = next
+        }
 
-        node.next = nil
+        next = nil
         
         return node
     }

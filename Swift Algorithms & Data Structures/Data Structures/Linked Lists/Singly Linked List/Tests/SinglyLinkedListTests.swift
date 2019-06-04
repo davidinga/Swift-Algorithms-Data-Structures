@@ -44,6 +44,9 @@ class SinglyLinkedListTests {
         print("The element at index 11 is: \(dock.index(of: 11)!.element).")
         _ = dock.remove(at: 11)
         print("Removed element at index 11.")
+        print("Removing node after head.")
+        _ = dock.remove(node: dock.first!.next!)
+        
         print("The LinkedList contains: \(dock.description)")
         print()
     }
