@@ -7,12 +7,16 @@
 //
 
 struct HashTableOnlyKeys<Key: Hashable> {
-    private typealias Element = Key
-    private typealias List = SinglyLinkedList<Element>
+    typealias Element = Key
+    typealias List = SinglyLinkedList<Element>
     
     private var table: [List]
     
     private(set) public var count = 0
+    
+    public var size: Int {
+        return table.count
+    }
     
     var isEmpty: Bool {
         return count == 0
@@ -77,6 +81,55 @@ struct HashTableOnlyKeys<Key: Hashable> {
     
     func index(forKey key: Key) -> Int {
         return abs(key.hashValue % table.count)
+    }
+}
+
+struct HashTableOnlyKeysIterator<Element: Hashable>: IteratorProtocol {
+    private let table: HashTableOnlyKeys<Element>
+    private var index = 0
+    
+    init(_ table: HashTableOnlyKeys<Element>) {
+        self.table = table
+    }
+    
+    mutating func next() -> Element? {
+        let element = table.value(at: index)
+        index += 1
+        return element
+    }
+}
+
+/// Extends Hash Table for Iteration
+extension HashTableOnlyKeys: Sequence {
+    
+    // Gets the value at a given index
+    func value(at index: Int) -> Element? {
+        if index >= self.count { return nil }
+        
+        var count = 0
+        var node: SinglyLinkedListNode<Element>?
+        var element: Element?
+        
+        // Iterate through Hash Table's array
+        loop: for tableIndex in 0..<table.count {
+            node = table[tableIndex].first
+            
+            // Iterate through Linked List
+            // Store element at given index
+            while node != nil {
+                element = node!.element
+                if count == index {
+                    break loop
+                }
+                node = node!.next
+                count += 1
+            }
+        }
+        return element
+    }
+    
+    func makeIterator() -> HashTableOnlyKeysIterator<Element> {
+        return HashTableOnlyKeysIterator(self)
     }
 }
 
