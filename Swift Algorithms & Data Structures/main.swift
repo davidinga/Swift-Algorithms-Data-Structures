@@ -6,6 +6,12 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
+// Test Hash Set
+_ = HashSetTests()
+
+// Test Hash Table with Only Keys
+_ = HashTableOnlyKeysTests()
+
 // Test Hash Table
 _ = HashTableTests()
 
