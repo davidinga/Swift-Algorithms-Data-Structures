@@ -16,6 +16,36 @@ public indirect enum BinaryTree {
 }
 
 extension BinaryTree {
+
+    public func traverseInOrder(process: (String) -> Void = { _ in }) {
+        if case let .node(left, right, value) = self {
+            left.traverseInOrder(process: process)
+            process(value)
+            print(value + " ", terminator: "")
+            right.traverseInOrder(process: process)
+        }
+    }
+    
+    public func traversePreOrder(process: (String) -> Void = { _ in }) {
+        if case let .node(left, right, value) = self {
+            process(value)
+            print(value + " ", terminator: "")
+            left.traversePreOrder(process: process)
+            right.traversePreOrder(process: process)
+        }
+    }
+    
+    public func traversePostOrder(process: (String) -> Void = { _ in }) {
+        if case let .node(left, right, value) = self {
+            left.traversePostOrder(process: process)
+            right.traversePostOrder(process: process)
+            process(value)
+            print(value + " ", terminator: "")
+        }
+    }
+}
+
+extension BinaryTree {
     
     // Gets the associated values and returns (value:leftChild:rightChild)
     var get: (value: String, leftChild: BinaryTree, rightChild: BinaryTree)? {
@@ -28,10 +58,10 @@ extension BinaryTree {
     }
     
     // Converts the tree into a string
-    var print: TreeString {
+    var obj: TreeString {
         return TreeString()
     }
     
     // Stores the string tree
-    var asString:String { return print.treeString(self){("\($0.get?.value ?? "")",$0.get?.leftChild ?? nil,$0.get?.rightChild ?? nil)}  }
+    var asString:String { return obj.treeString(self){("\($0.get?.value ?? "")",$0.get?.leftChild ?? nil,$0.get?.rightChild ?? nil)}  }
 }

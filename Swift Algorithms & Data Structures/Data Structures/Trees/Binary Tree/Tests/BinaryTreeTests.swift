@@ -36,15 +36,34 @@ class BinaryTreeTests {
         let d = BinaryTree.node(leftChild: .empty, rightChild: .empty, value: "d")
         let e = BinaryTree.node(leftChild: .empty, rightChild: .empty, value: "e")
         let f = BinaryTree.node(leftChild: .empty, rightChild: .empty, value: "f")
+        let g = BinaryTree.node(leftChild: .empty, rightChild: .empty, value: "g")
         
         // intermediate nodes
         let b = BinaryTree.node(leftChild: d, rightChild: e, value: "b")
-        let c = BinaryTree.node(leftChild: f, rightChild: .empty, value: "c")
+        let c = BinaryTree.node(leftChild: f, rightChild: g, value: "c")
         
         // root
         let root = BinaryTree.node(leftChild: b, rightChild: c, value: "a")
         
         print(root.asString)
+        print()
+        
+        print("In Order Traversal")
+        print("______________________________")
+        root.traverseInOrder()
+        print()
+        print()
+        
+        print("Pre Order Traversal")
+        print("______________________________")
+        root.traversePreOrder()
+        print()
+        print()
+        
+        print("Post Order Traversal")
+        print("______________________________")
+        root.traversePostOrder()
+        print()
         print()
     }
 }
