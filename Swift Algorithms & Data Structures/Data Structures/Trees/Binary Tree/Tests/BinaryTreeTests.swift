@@ -48,22 +48,35 @@ class BinaryTreeTests {
         print(root.asString)
         print()
         
+        let three = BinaryTree.node(leftChild: .empty, rightChild: .empty, value: "3")
+        let eight = BinaryTree.node(leftChild: .empty, rightChild: .empty, value: "8")
+        let eleven = BinaryTree.node(leftChild: .empty, rightChild: .empty, value: "11")
+        
+        let four = BinaryTree.node(leftChild: three, rightChild: .empty, value: "4")
+        let ten = BinaryTree.node(leftChild: eight, rightChild: eleven, value: "10")
+        
+        let five = BinaryTree.node(leftChild: four, rightChild: ten, value: "5")
+        
+        print(five.asString)
+        print()
+        
         print("In Order Traversal")
         print("______________________________")
-        root.traverseInOrder()
+        five.traverseInOrder()
         print()
         print()
         
         print("Pre Order Traversal")
         print("______________________________")
-        root.traversePreOrder()
+        five.traversePreOrder()
         print()
         print()
         
         print("Post Order Traversal")
         print("______________________________")
-        root.traversePostOrder()
+        five.traversePostOrder()
         print()
         print()
+
     }
 }

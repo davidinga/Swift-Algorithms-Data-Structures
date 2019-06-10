@@ -17,29 +17,26 @@ public indirect enum BinaryTree {
 
 extension BinaryTree {
 
-    public func traverseInOrder(process: (String) -> Void = { _ in }) {
+    public func traverseInOrder() {
         if case let .node(left, right, value) = self {
-            left.traverseInOrder(process: process)
-            process(value)
+            left.traverseInOrder()
             print(value + " ", terminator: "")
-            right.traverseInOrder(process: process)
+            right.traverseInOrder()
         }
     }
     
-    public func traversePreOrder(process: (String) -> Void = { _ in }) {
+    public func traversePreOrder() {
         if case let .node(left, right, value) = self {
-            process(value)
             print(value + " ", terminator: "")
-            left.traversePreOrder(process: process)
-            right.traversePreOrder(process: process)
+            left.traversePreOrder()
+            right.traversePreOrder()
         }
     }
     
-    public func traversePostOrder(process: (String) -> Void = { _ in }) {
+    public func traversePostOrder() {
         if case let .node(left, right, value) = self {
-            left.traversePostOrder(process: process)
-            right.traversePostOrder(process: process)
-            process(value)
+            left.traversePostOrder()
+            right.traversePostOrder()
             print(value + " ", terminator: "")
         }
     }
