@@ -6,8 +6,18 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
+//// Algorithm Tests
+
+// Test Insertion Sort
+_ = InsertionSortTests()
+
+//// Data Structure Tests
+
+// Test Heap
+//_ = HeapTests()
+
 // Test Binary Tree
-_ = BinaryTreeTests()
+//_ = BinaryTreeTests()
 
 //// Test Hash Set
 //_ = HashSetTests()
