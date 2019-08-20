@@ -6,10 +6,21 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
+//// Coding Problem Tests
+
+// Test Reverse Words In String
+//_ = ReverseWordsInStringTests()
+
+// Test Find Palindrome in Linked List
+//_ = FindPalindromeLinkedListTests()
+
 //// Algorithm Tests
 
 // Test Insertion Sort
-_ = InsertionSortTests()
+//_ = InsertionSortTests()
+
+// Test Radix Sort
+_ = RadixSortTests()
 
 //// Data Structure Tests
 
