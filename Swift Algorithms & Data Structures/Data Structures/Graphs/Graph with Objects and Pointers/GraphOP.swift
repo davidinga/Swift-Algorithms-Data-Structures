@@ -6,7 +6,7 @@
 //  Copyright © 2019 David Inga. All rights reserved.
 //
 
-open class AdjacencyList<Element: Hashable> {
+open class GraphOP<Element: Hashable> {
     public var adjacencyDict: [Vertex<Element>: [Edge<Element>]] = [:]
     public init() {}
     
@@ -25,7 +25,7 @@ open class AdjacencyList<Element: Hashable> {
     }
 }
 
-extension AdjacencyList: Graphable {
+extension GraphOP: Graphable {
     public func createVertex(data: Element) -> Vertex<Element> {
         let vertex = Vertex(data: data)
         
