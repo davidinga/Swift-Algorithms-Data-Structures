@@ -8,7 +8,7 @@
 
 // Stack implementation using Array<Element>
 
-struct Stack<Element> {
+public struct Stack<Element> {
     fileprivate var array = [Element]()
     
     public var isEmpty: Bool {
@@ -27,7 +27,7 @@ struct Stack<Element> {
         array.append(element)
     }
     
-    public mutating func pop() -> Element? {
+    @discardableResult public mutating func pop() -> Element? {
         return array.popLast()
     }
 }
